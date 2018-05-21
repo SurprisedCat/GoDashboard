@@ -1,6 +1,6 @@
 # GoDashboard
 
-A Dasoboard for nearly all the linux distributions.
+A Dasoboard for nearly all the linux distributions. This work is inspired by linux dash.  
 
 ## Features
 
@@ -59,7 +59,6 @@ cd Your-GoDashboard-Dir && ./godashboard
 │   │       ├── bootstrap.js  
 │   │       ├── echarts.min.js  
 │   │       ├── gosimple.js  
-│   │       ├── gosimple.js.backup  
 │   │       └── jquery.min.js  
 │   └── linuxdata.go  
 └── README.md  

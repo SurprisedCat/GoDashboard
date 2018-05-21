@@ -41,6 +41,12 @@ Without Golang:
 cd Your-GoDashboard-Dir && ./godashboard
 ```
 
+### Step 3 Visit Web UI
+
+```sh
+http://your-ip:7676/
+```
+
 ## Project Structure
 
 ├── godashboard  

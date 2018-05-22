@@ -65,7 +65,7 @@ cpu_util_option = {
             formatter: '{value} %'  
         },  
         splitLine: {
-            show: false
+            show: true
         },
         min: 0 ,
         max: 100 ,
@@ -126,6 +126,7 @@ running_process_option = {
         {
             type: 'category',
             boundaryGap: true,
+	    scale: true,
             data: timebar
         }
     ],

@@ -95,8 +95,8 @@ func ProcTCP(c *gin.Context) {
 	res = CmdExec("cat /proc/net/tcp6 | wc -l")
 	tcpV6Links, _ := strconv.Atoi(res[0])
 	c.JSON(http.StatusOK, gin.H{
-		"tcpV4Links": tcpV4Links - 2,
-		"tcpV6Links": tcpV6Links - 2,
+		"tcpV4Links": NonNegative(tcpV4Links - 2),
+		"tcpV6Links": NonNegative(tcpV6Links - 2),
 	})
 }
 
@@ -107,8 +107,8 @@ func ProcUDP(c *gin.Context) {
 	res = CmdExec("cat /proc/net/udp6 | wc -l")
 	udpV6Links, _ := strconv.Atoi(res[0])
 	c.JSON(http.StatusOK, gin.H{
-		"udpV4Links": udpV4Links - 2,
-		"udpV6Links": udpV6Links - 2,
+		"udpV4Links": NonNegative(udpV4Links - 2),
+		"udpV6Links": NonNegative(udpV6Links - 2),
 	})
 }
 
@@ -143,4 +143,13 @@ func CmdExec(usercommand string) []string {
 	//delete the last and empty element
 	resArray = resArray[:len(resArray)-1]
 	return resArray
+}
+
+//NonNegative set the minimum value to zero
+func NonNegative(paraValue int) (NonNeg int) {
+	if paraValue < 0 {
+		return 0
+	} else {
+		return paraValue
+	}
 }
